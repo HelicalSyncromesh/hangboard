@@ -27,16 +27,4 @@ namespace Timer.Models
             return s.ToString();
         }
     }
-
-    public class Score
-    {
-        public int ExerciseId { get; set; }
-        public int QuantityCompleted { get; set; }
-        public DateTime ScoredAt { get; set; }
-
-        public override string ToString()
-        {
-            return $"- {ExerciseId}: {QuantityCompleted} ::{ScoredAt.ToShortDateString()}";
-        }
-    }
 }
