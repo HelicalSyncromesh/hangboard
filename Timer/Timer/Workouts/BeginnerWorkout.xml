@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkoutDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>2</Id>
+  <Title>Beginner Workout</Title>
+  <ExerciseDefinitions>
+    <ExerciseDefinition>
+      <Id>201</Id>
+      <Quantity>15</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Jug (1)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>202</Id>
+      <Quantity>1</Quantity>
+      <IsDuration>false</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Round Sloper (2)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>203</Id>
+      <Quantity>10</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Medium Edge (5)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>204</Id>
+      <Quantity>15</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Pocket (4)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>205</Id>
+      <Quantity>3</Quantity>
+      <IsDuration>false</IsDuration>
+      <Exercise>shrugs</Exercise>
+      <Hold>Pocket (4)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>206</Id>
+      <Quantity>20</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Large Edge (7)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>207</Id>
+      <Quantity>2</Quantity>
+      <IsDuration>false</IsDuration>
+      <Exercise>pull-ups</Exercise>
+      <Hold>Large Edge (7)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>208</Id>
+      <Quantity>10</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Round Sloper (2)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>209</Id>
+      <Quantity>5</Quantity>
+      <IsDuration>false</IsDuration>
+      <Exercise>knee-raises</Exercise>
+      <Hold>Pocket (4)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>210</Id>
+      <Quantity>4</Quantity>
+      <IsDuration>false</IsDuration>
+      <Exercise>pull-ups</Exercise>
+      <Hold>Large Edge (7)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>211</Id>
+      <Quantity>10</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Medium Edge (5)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>212</Id>
+      <Quantity>3</Quantity>
+      <IsDuration>false</IsDuration>
+      <Exercise>pull-ups</Exercise>
+      <Hold>Jug (1)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>213</Id>
+      <Quantity>20</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Round Sloper (2)</Hold>
+    </ExerciseDefinition>
+  </ExerciseDefinitions>
+</WorkoutDefinition>

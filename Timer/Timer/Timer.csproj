@@ -5,10 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Workouts\AdvancedWorkout.xml" />
+    <None Remove="Workouts\BeginnerWorkout.xml" />
+    <None Remove="Workouts\IntermediateWorkout.xml" />
     <None Remove="Workouts\SimpleWorkout.xml" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Workouts\IntermediateWorkout.xml" />
+    <EmbeddedResource Include="Workouts\AdvancedWorkout.xml" />
+    <EmbeddedResource Include="Workouts\BeginnerWorkout.xml" />
     <EmbeddedResource Include="Workouts\SimpleWorkout.xml" />
   </ItemGroup>
 
