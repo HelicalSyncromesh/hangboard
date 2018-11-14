@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Timer"
+             x:Class="Timer.MainPage">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="20, 40, 20, 20" />
+            <On Platform="Android, UWP" Value="20" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Simple" />
+            <Button Text="Start" Clicked="OnStartSimpleClicked"></Button>
+            <Button Text="History" Clicked="OnHistorySimpleClicked"></Button>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Beginner" />
+            <Button Text="Start" Clicked="OnStartBeginnerClicked"></Button>
+            <Button Text="History" Clicked="OnHistoryBeginnerClicked"></Button>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Intermediate" />
+            <Button Text="Start" Clicked="OnStartIntermediateClicked"></Button>
+            <Button Text="History" Clicked="OnHistoryIntermediateClicked"></Button>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Advanced" />
+            <Button Text="Start" Clicked="OnStartAdvancedClicked"></Button>
+            <Button Text="History" Clicked="OnHistoryAdvancedClicked"></Button>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

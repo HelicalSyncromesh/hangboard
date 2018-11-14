@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkoutDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>1</Id>
+  <Title>Simple Workout</Title>
+  <ExerciseDefinitions>
+    <ExerciseDefinition>
+      <Id>1</Id>
+      <Quantity>1</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Jug (1)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>2</Id>
+      <Quantity>2</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Round Sloper (2)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>3</Id>
+      <Quantity>3</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Medium Edge (5)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>4</Id>
+      <Quantity>4</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Pocket (4)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>5</Id>
+      <Quantity>5</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Large Hold (7)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>6</Id>
+      <Quantity>6</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Round Sloper (2)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>7</Id>
+      <Quantity>7</Quantity>
+      <IsDuration>false</IsDuration>
+      <Exercise>Knee Raises</Exercise>
+      <Hold>Pocket (4)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>8</Id>
+      <Quantity>10</Quantity>
+      <IsDuration>false</IsDuration>
+      <Exercise>Shrugs</Exercise>
+      <Hold>Large Edge (7)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>9</Id>
+      <Quantity>14</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Medium Edge (5)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>10</Id>
+      <Quantity>15</Quantity>
+      <IsDuration>false</IsDuration>
+      <Exercise>Shrugs</Exercise>
+      <Hold>Jug (1)</Hold>
+    </ExerciseDefinition>
+    <ExerciseDefinition>
+      <Id>11</Id>
+      <Quantity>22</Quantity>
+      <IsDuration>true</IsDuration>
+      <Exercise>hang</Exercise>
+      <Hold>Round Sloper (2)</Hold>
+    </ExerciseDefinition>
+  </ExerciseDefinitions>
+</WorkoutDefinition>
