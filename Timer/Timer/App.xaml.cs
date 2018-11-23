@@ -14,11 +14,13 @@ namespace Timer
 	public partial class App : Application
 	{
 	    public static ScorecardService Scorecard;
+	    public static RecordKeeper TopScores;
 	    
 	    public App ()
 		{
 			InitializeComponent();
             Scorecard = new ScorecardService();
+            TopScores = new RecordKeeper(Properties);
 			MainPage = new NavigationPage(new MainPage());
 		}
 

@@ -10,7 +10,7 @@ namespace Timer.Test.RecordKeeperFixture
 {
     public class given
     {
-        private Dictionary<string, object> _properties;
+        private IDictionary<string, object> _properties;
         private RecordKeeper _sut;
         private readonly DateTime _dayOne = new DateTime(2018, 1, 1);
         private readonly DateTime _dayTwo = new DateTime(2018, 1, 2);

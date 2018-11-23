@@ -16,9 +16,7 @@ namespace Timer
 	    private ExerciseDefinition _definition;
 	    private readonly Guid _workoutInstance;
 
-
-	    
-	    public ExercisePage(Guid workoutInstance, ExerciseDefinition def)
+        public ExercisePage(Guid workoutInstance, ExerciseDefinition def)
 	    {
 	        _definition = def;
 	        _workoutInstance = workoutInstance;
@@ -34,7 +32,7 @@ namespace Timer
 
 	        var exerciseStats = new Label
 	        {
-	            Text = "Last: x Best: x"
+	            Text = TopScoreLabel(App.TopScores.Load(def.Id))
 	        };
 
 	        var clock = new Label
@@ -83,22 +81,7 @@ namespace Timer
 	        
 	        return grid;
 	    }
-
-	    private string ExerciseTitle(ExerciseDefinition exerciseDefinition)
-	    {
-	        var s = new StringBuilder()
-	            .Append(exerciseDefinition.Quantity)
-	            .Append(' ');
-	        
-	        if (exerciseDefinition.IsDuration) s.Append("second ");
-	        
-	        s.Append(exerciseDefinition.Exercise.ToLower());
-	        
-	        return s.ToString();
-	    }
-
-
-
+        
 	    private Button ResultButton(int desiredResult)
 	    {
 	        var button = new Button
@@ -121,6 +104,33 @@ namespace Timer
             });
             await Navigation.PopModalAsync();
         }
+
+	    private string ExerciseTitle(ExerciseDefinition exerciseDefinition)
+	    {
+	        var s = new StringBuilder()
+	            .Append(exerciseDefinition.Quantity)
+	            .Append(' ');
+	        
+	        if (exerciseDefinition.IsDuration) s.Append("second ");
+	        
+	        s.Append(exerciseDefinition.Exercise.ToLower());
+	        
+	        return s.ToString();
+	    }
+
+	    private string TopScoreLabel(History history)
+	    {
+	        return new StringBuilder()
+	            .Append("Last Score: ")
+	            .Append(history.Last)
+	            .Append(" | Best: ")
+	            .Append(history.Best)
+	            .Append(" | Date of Best: ")
+	            .Append(history.DateOfBest == DateTime.MinValue
+	                ? "N/A"
+	                : history.DateOfBest.ToShortDateString())
+	            .ToString();
+	    }
 	}
 
 

@@ -12,7 +12,7 @@ namespace Timer.Services
 
         private Dictionary<int, History> _recordBook;
 
-        public RecordKeeper(Dictionary<string,object> properties)
+        public RecordKeeper(IDictionary<string, object> properties)
         {
             if (!properties.ContainsKey(RecordsId))
             {
