@@ -16,19 +16,37 @@ namespace Timer
 	{
 	    public static ScorecardService Scorecard;
 	    public static RecordKeeper TopScores;
+	    public static WorkoutStateService WorkoutState;
 	    
 	    public App ()
 		{
 			InitializeComponent();
             Scorecard = new ScorecardService();
             TopScores = new RecordKeeper(Properties);
+            WorkoutState = new WorkoutStateService();
 			MainPage = new NavigationPage(new MainPage());
 		}
 
-	    public static void Score(ExerciseScored @event)
+	    public static void Handle(WorkoutEvent e)
 	    {
-	        Scorecard.Score(@event);
-            TopScores.Save(@event);
+	        switch (e)
+	        {
+	                case WorkoutStarted @event:
+	                    WorkoutState.Save(@event);
+                        Scorecard.StartWorkout(@event);
+	                    break;
+                    case ExerciseScored @event:
+                        WorkoutState.Save(@event);
+                        Scorecard.Score(@event);
+                        TopScores.Save(@event);
+                        break;
+                    case WorkoutCompleted @event:
+                        WorkoutState.Save(@event);
+                        Scorecard.EndWorkout(@event);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+	        }
 	    }
 
 	    protected override void OnStart ()

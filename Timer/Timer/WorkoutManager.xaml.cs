@@ -56,7 +56,7 @@ namespace Timer
 	        if (!_workoutStarted)
 	        {
 	            _instanceId = Guid.NewGuid();
-	            App.Scorecard.StartWorkout(new WorkoutStarted
+	            App.Handle(new WorkoutStarted
 	            {
                     InstanceId = _instanceId,
                     Timestamp = DateTime.Now,
@@ -71,7 +71,7 @@ namespace Timer
 	        
 	        if (_currentExercise == _definition.ExerciseDefinitions.Count)
 	        {
-                App.Scorecard.EndWorkout(new WorkoutCompleted
+                App.Handle(new WorkoutCompleted
                 {
                     InstanceId = _instanceId,
                     Timestamp = DateTime.Now
