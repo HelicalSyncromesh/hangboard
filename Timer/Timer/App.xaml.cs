@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
+using Timer.Events;
 using Timer.Models;
 using Timer.Services;
 using Xamarin.Forms;
@@ -23,6 +24,12 @@ namespace Timer
             TopScores = new RecordKeeper(Properties);
 			MainPage = new NavigationPage(new MainPage());
 		}
+
+	    public static void Score(ExerciseScored @event)
+	    {
+	        Scorecard.Score(@event);
+            TopScores.Save(@event);
+	    }
 
 	    protected override void OnStart ()
 		{

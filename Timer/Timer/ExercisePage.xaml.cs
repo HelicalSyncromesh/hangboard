@@ -95,7 +95,7 @@ namespace Timer
 
         private async Task OnResultClicked(int result)
         {
-            App.Scorecard.Score(new ExerciseScored
+            App.Score(new ExerciseScored
             {
                 ExerciseId = _definition.Id,
                 InstanceId = _workoutInstance,
