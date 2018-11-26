@@ -84,9 +84,23 @@ namespace Timer
 
         private void DisplayResults(Scorecard scorecard)
         {
-            Content = new Label
+            var button = new Button
             {
-                Text = scorecard.ToString()
+                Text = "Return to Home"
+            };
+            button.Clicked += async (sender, args) => await Navigation.PopModalAsync();
+            
+            Content = 
+            new StackLayout
+            {
+                Children =
+                {
+                    new Label
+                    {
+                        Text = scorecard.ToString()
+                    },
+                    button
+                }
             };
         }
 
