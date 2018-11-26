@@ -17,7 +17,6 @@ namespace Timer
 	public partial class WorkoutManager : ContentPage
 	{
 	    private WorkoutDefinition _definition;
-	    private bool _workoutStarted;
 	    private int _currentExercise;
 	    private Guid _instanceId;
 
@@ -28,10 +27,10 @@ namespace Timer
 
 	    public WorkoutManager(int workoutId)
 	    {
-	        _workoutStarted = false;
 	        _currentExercise = 0;
 	        _definition = LoadDefinition(workoutId);
-        }
+	        _instanceId = Guid.NewGuid();
+	    }
 
         private WorkoutDefinition LoadDefinition(int workoutId)
         {
@@ -53,16 +52,15 @@ namespace Timer
 
         protected override async void OnAppearing()
 	    {
-	        if (!_workoutStarted)
+	        if (App.WorkoutState.StateOf(_instanceId)==WorkoutState.NotStarted)
 	        {
-	            _instanceId = Guid.NewGuid();
 	            App.Handle(new WorkoutStarted
 	            {
                     InstanceId = _instanceId,
                     Timestamp = DateTime.Now,
                     WorkoutId = _definition.Id
 	            });
-	            _workoutStarted = true;
+	            
                 await Navigation.PushModalAsync(new ExercisePage(_instanceId,_definition.ExerciseDefinitions[_currentExercise]));
 	            return;
 	        }
