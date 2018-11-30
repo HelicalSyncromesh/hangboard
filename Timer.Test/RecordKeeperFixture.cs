@@ -90,7 +90,7 @@ namespace Timer.Test.RecordKeeperFixture
         [Fact]
         public void ExternalCollectionCorrectlyReferenced()
         {
-            (_properties["exercise_records"] as Dictionary<int, History>)?[1]
+            (_properties["exercise_best_last_scores"] as Dictionary<int, History>)?[1]
                 .Should().NotBeNull();
         }
     }

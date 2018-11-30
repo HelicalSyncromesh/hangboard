@@ -7,18 +7,18 @@ namespace Timer.Services
 {
     public class RecordKeeper
     {
-        private const string RecordsId = "exercise_records";
+        private const string AccessKey = "exercise_best_last_scores";
 
-        private Dictionary<int, History> _recordBook;
+        private readonly Dictionary<int, History> _recordBook;
 
         public RecordKeeper(IDictionary<string, object> properties)
         {
-            if (!properties.ContainsKey(RecordsId))
+            if (!properties.ContainsKey(AccessKey))
             {
-                properties.Add(RecordsId, new Dictionary<int,History>(80));
+                properties.Add(AccessKey, new Dictionary<int,History>(80));
             }
 
-            _recordBook = (Dictionary<int, History>)properties[RecordsId];
+            _recordBook = (Dictionary<int, History>)properties[AccessKey];
         }
         public History Load(int exerciseId)
         {
