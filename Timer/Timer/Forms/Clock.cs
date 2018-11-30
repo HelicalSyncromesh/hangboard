@@ -14,5 +14,10 @@ namespace Timer.Forms
             s.Append(time.ToString(@"m\:ss"));
             Text = s.ToString();
         }
+
+        public void Display(object sender, int elapsedTime)
+        {
+            Display(elapsedTime);
+        }
     }
 }

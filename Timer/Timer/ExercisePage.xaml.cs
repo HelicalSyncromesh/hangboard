@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Timer.Events;
+using Timer.Forms;
 using Timer.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,6 +17,8 @@ namespace Timer
 	    private ExerciseDefinition _definition;
 	    private readonly Guid _workoutInstance;
 
+	    public Clock Clock = new Clock();
+        
         public ExercisePage(Guid workoutInstance, ExerciseDefinition def)
 	    {
 	        _definition = def;
@@ -35,10 +38,7 @@ namespace Timer
 	            Text = TopScoreLabel(App.TopScores.Load(def.Id))
 	        };
 
-	        var clock = new Label
-	        {
-	            Text = "I AM CLOCK"
-	        };
+	        
 
 	        var grid = ResultsGrid(def);
 
@@ -51,10 +51,20 @@ namespace Timer
 	                exerciseTitle,
 	                exercisePosition,
 	                exerciseStats,
-	                clock,
-	                grid
-	            }
+	                Clock,
+	                grid}
 	        };
+	    }
+
+	    protected override void OnAppearing()
+	    {
+	        
+	        base.OnAppearing();
+	    }
+
+	    protected override void OnDisappearing()
+	    {
+	        base.OnDisappearing();
 	    }
 
 	    private Grid ResultsGrid(ExerciseDefinition exerciseDefinition)
