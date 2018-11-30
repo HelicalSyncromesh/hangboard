@@ -50,9 +50,9 @@ namespace Timer.Test.ScorecardServiceFixture
                 WorkoutId = 1,
                 WorkoutStarted = new DateTime(2018, 1, 1, 12, 0, 0),
                 WorkoutEnded = new DateTime(2018, 1, 1, 12, 2, 0),
-                Scores = new Dictionary<int, Score>
+                Scores = new Dictionary<int, Result>
                 {
-                    {1, new Score {ExerciseId = 1, QuantityCompleted = 4, ScoredAt = new DateTime(2018, 1, 1, 12, 1, 0)}}
+                    {1, new Result {ExerciseId = 1, QuantityCompleted = 4, ScoredAt = new DateTime(2018, 1, 1, 12, 1, 0)}}
                 }
             });
         }

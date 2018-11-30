@@ -23,36 +23,15 @@ namespace Timer
 
 	    public event EventHandler<int> Tick;
 
-	    public WorkoutManager ()
-		{
-			InitializeComponent ();
-		}
-
 	    public WorkoutManager(int workoutId)
 	    {
 	        _currentExercise = 0;
 	        _timerValue = -20;
-	        _definition = LoadDefinition(workoutId);
+	        _definition = App.Workouts.Load(workoutId);
 	        _instanceId = Guid.NewGuid();
+
+            InitializeComponent();
 	    }
-
-        private WorkoutDefinition LoadDefinition(int workoutId)
-        {
-            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(WorkoutDefinition)).Assembly;
-            var stream = assembly.GetManifestResourceStream("Timer.Workouts.SimpleWorkout.xml");
-
-            //foreach (var res in assembly.GetManifestResourceNames())
-            //    System.Diagnostics.Debug.WriteLine("found resource: " + res);
-
-            WorkoutDefinition definition;
-            using (var reader = new StreamReader(stream))
-            {
-                var serializer = new XmlSerializer(typeof(WorkoutDefinition));
-                definition = (WorkoutDefinition)serializer.Deserialize(reader);
-            }
-
-            return definition;
-        }
 
         protected override async void OnAppearing()
 	    {
@@ -66,7 +45,7 @@ namespace Timer
                     WorkoutId = _definition.Id
 	            });
 
-	            await PushNextExercise();
+	            await PushNextExerciseModal();
 	            return;
 	        }
 
@@ -84,10 +63,10 @@ namespace Timer
 	            return;
 	        }
 
-	        await PushNextExercise();
+	        await PushNextExerciseModal();
 	    }
 
-	    private async Task PushNextExercise()
+	    private async Task PushNextExerciseModal()
 	    {
 	        var page = new ExercisePage(_instanceId, _definition.ExerciseDefinitions[_currentExercise]);
 	        page.Appearing += (sender, args) => Tick += page.Clock.Display;
@@ -117,11 +96,7 @@ namespace Timer
                 }
             };
         }
-
-        protected override void OnDisappearing()
-	    {
-            base.OnDisappearing();
-	    }
+        
 
 	    public bool OnSystemTimerTick()
 	    {
@@ -131,7 +106,7 @@ namespace Timer
 	        return App.WorkoutState.StateOf(_instanceId) != WorkoutState.Completed;
 	    }
 
-	    protected virtual void OnTick(int arg)
+	    protected void OnTick(int arg)
 	    {
 	        var handler = Tick; //in this one specific scenario handler ends up being a copy of Tick, not a reference.
 

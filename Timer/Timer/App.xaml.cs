@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
+using Timer.Data;
 using Timer.Events;
 using Timer.Models;
 using Timer.Services;
@@ -17,6 +18,7 @@ namespace Timer
 	    public static ScorecardService Scorecard;
 	    public static RecordKeeper TopScores;
 	    public static WorkoutStateService WorkoutState;
+	    public static IWorkout Workouts;
 	    
 	    public App ()
 		{
@@ -24,6 +26,7 @@ namespace Timer
             Scorecard = new ScorecardService();
             TopScores = new RecordKeeper(Properties);
             WorkoutState = new WorkoutStateService();
+            Workouts = new WorkoutRepository();
 			MainPage = new NavigationPage(new MainPage());
 		}
 

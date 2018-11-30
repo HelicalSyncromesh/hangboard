@@ -46,7 +46,7 @@ namespace Timer.Services
                 WorkoutId = start.WorkoutId,
                 WorkoutStarted = start.Timestamp,
                 WorkoutEnded = end.Timestamp,
-                Scores = scores.ToDictionary(x => x.ExerciseId, x => new Score {ExerciseId = x.ExerciseId, QuantityCompleted = x.Score, ScoredAt = x.Timestamp})
+                Scores = scores.ToDictionary(x => x.ExerciseId, x => new Result {ExerciseId = x.ExerciseId, QuantityCompleted = x.Score, ScoredAt = x.Timestamp})
             };
 
             return result;

@@ -10,7 +10,7 @@ namespace Timer.Models
         public Guid InstanceId { get; set; }
         public DateTime WorkoutStarted { get; set; }
         public DateTime WorkoutEnded { get; set; }
-        public Dictionary<int,Score> Scores { get; set; }
+        public Dictionary<int,Result> Scores { get; set; }
 
         public override string ToString()
         {

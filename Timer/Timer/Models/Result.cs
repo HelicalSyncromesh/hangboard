@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Timer.Models
 {
-    public class Score
+    public class Result
     {
         public int ExerciseId { get; set; }
         public int QuantityCompleted { get; set; }
