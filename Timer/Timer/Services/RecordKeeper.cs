@@ -22,15 +22,9 @@ namespace Timer.Services
         }
         public History Load(int exerciseId)
         {
-            try
-            {
-                return _recordBook[exerciseId];
-            }
-            catch (KeyNotFoundException e)
-            {
-                return new History(0,DateTime.MinValue,0,DateTime.MinValue);
-            }
-            
+            return _recordBook.ContainsKey(exerciseId) ?
+                _recordBook[exerciseId]
+                    : new History(0,DateTime.MinValue,0,DateTime.MinValue);
         }
 
         public void Save(ExerciseScored e)
