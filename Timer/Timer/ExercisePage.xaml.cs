@@ -23,42 +23,26 @@ namespace Timer
 	    {
 	        _definition = def;
 	        _workoutInstance = workoutInstance;
-	        var exerciseTitle = new Label
-	        {
-	            Text = ExerciseTitle(def)
-	        };
-
+	        
 	        var exercisePosition = new Label
 	        {
 	            Text = def.Hold
 	        };
 
-	        var exerciseStats = 
-            
             Title = "Exercise Page in C#";
 
 	        Content = new StackLayout
 	        {
 	            Children =
 	            {
-	                exerciseTitle,
-	                exercisePosition,
+	                new ExerciseTitle(def),
+	                new Label{ Text = def.Hold },
 	                new PreviousResults(App.TopScores.Load(def.Id)),
 	                Clock,
 	                ResultsGrid(def)}
 	        };
 	    }
 
-	    protected override void OnAppearing()
-	    {
-	        
-	        base.OnAppearing();
-	    }
-
-	    protected override void OnDisappearing()
-	    {
-	        base.OnDisappearing();
-	    }
 
 	    private Grid ResultsGrid(ExerciseDefinition exerciseDefinition)
 	    {
@@ -108,21 +92,6 @@ namespace Timer
             await Navigation.PopModalAsync();
         }
 
-	    private string ExerciseTitle(ExerciseDefinition exerciseDefinition)
-	    {
-	        var s = new StringBuilder()
-	            .Append(exerciseDefinition.Quantity)
-	            .Append(' ');
-	        
-	        if (exerciseDefinition.IsDuration) s.Append("second ");
-	        
-	        s.Append(exerciseDefinition.Exercise.ToLower());
-	        
-	        return s.ToString();
-	    }
-
-
 	}
-
 
 }
