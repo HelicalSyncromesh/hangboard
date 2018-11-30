@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Timer.Data;
 using Timer.Events;
 using Timer.Models;
 
 namespace Timer.Services
 {
-    public class RecordKeeper : IExerciseRecords
+    public class RecordKeeper
     {
         private const string RecordsId = "exercise_records";
 
