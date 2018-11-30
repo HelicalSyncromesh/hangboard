@@ -80,7 +80,7 @@ namespace Timer
                     Timestamp = DateTime.Now
                 });
 
-	            DisplayResults(App.Scorecard.GetScorecard(_instanceId));
+	            DisplayResults(App.Scorecard.Load(_instanceId));
 	            return;
 	        }
 

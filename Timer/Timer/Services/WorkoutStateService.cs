@@ -6,7 +6,7 @@ namespace Timer.Services
 {
     public class WorkoutStateService
     {
-        private Dictionary<Guid, WorkoutState> _states = new Dictionary<Guid, WorkoutState>();
+        private readonly Dictionary<Guid, WorkoutState> _states = new Dictionary<Guid, WorkoutState>();
 
         public WorkoutState StateOf(Guid instanceId)
         {

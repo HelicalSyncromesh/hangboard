@@ -27,22 +27,22 @@ namespace Timer
 			MainPage = new NavigationPage(new MainPage());
 		}
 
-	    public static void Handle(WorkoutEvent e)
+	    public static void Handle(WorkoutEvent @event)
 	    {
-	        switch (e)
+	        switch (@event)
 	        {
-	                case WorkoutStarted @event:
-	                    WorkoutState.Save(@event);
-                        Scorecard.StartWorkout(@event);
+	                case WorkoutStarted e:
+	                    WorkoutState.Save(e);
+                        Scorecard.Save(e);
 	                    break;
-                    case ExerciseScored @event:
-                        WorkoutState.Save(@event);
-                        Scorecard.Score(@event);
-                        TopScores.Save(@event);
+                    case ExerciseScored e:
+                        WorkoutState.Save(e);
+                        Scorecard.Save(e);
+                        TopScores.Save(e);
                         break;
-                    case WorkoutCompleted @event:
-                        WorkoutState.Save(@event);
-                        Scorecard.EndWorkout(@event);
+                    case WorkoutCompleted e:
+                        WorkoutState.Save(e);
+                        Scorecard.Save(e);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();

@@ -19,20 +19,20 @@ namespace Timer.Test.ScorecardServiceFixture
         public given()
         {
             _scorecardService = new ScorecardService();
-            _scorecardService.StartWorkout(new WorkoutStarted
+            _scorecardService.Save(new WorkoutStarted
             {
                 InstanceId = _instanceId,
                 WorkoutId = 1,
                 Timestamp = new DateTime(2018, 1, 1, 12, 0, 0)
             });
-            _scorecardService.Score(new ExerciseScored
+            _scorecardService.Save(new ExerciseScored
             {
                 ExerciseId = 1,
                 InstanceId = _instanceId,
                 Score = 4,
                 Timestamp = new DateTime(2018, 1, 1, 12, 1, 0)
             });
-            _scorecardService.EndWorkout(new WorkoutCompleted
+            _scorecardService.Save(new WorkoutCompleted
             {
                 InstanceId = _instanceId,
                 Timestamp = new DateTime(2018, 1, 1, 12, 2, 0)
@@ -42,7 +42,7 @@ namespace Timer.Test.ScorecardServiceFixture
         [Fact]
         public void Test1()
         {
-            var result = _scorecardService.GetScorecard(_instanceId);
+            var result = _scorecardService.Load(_instanceId);
 
             result.Should().BeEquivalentTo(new Scorecard
             {

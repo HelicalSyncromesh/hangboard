@@ -8,29 +8,29 @@ namespace Timer.Services
 {
     public class ScorecardService
     {
-        private Dictionary<Guid, List<WorkoutEvent>> _events;
+        private readonly Dictionary<Guid, List<WorkoutEvent>> _events;
 
         public ScorecardService()
         {
             _events = new Dictionary<Guid, List<WorkoutEvent>>();
         }
 
-        public void StartWorkout(WorkoutStarted @event)
+        public void Save(WorkoutStarted @event)
         {
             _events.Add(@event.InstanceId,new List<WorkoutEvent>{@event});
         }
 
-        public void Score(ExerciseScored @event)
+        public void Save(ExerciseScored @event)
         {
             _events[@event.InstanceId].Add(@event);
         }
 
-        public void EndWorkout(WorkoutCompleted @event)
+        public void Save(WorkoutCompleted @event)
         {
             _events[@event.InstanceId].Add(@event);
         }
 
-        public Scorecard GetScorecard(Guid instanceId)
+        public Scorecard Load(Guid instanceId)
         {
             var workoutEvents = _events[instanceId];
 
