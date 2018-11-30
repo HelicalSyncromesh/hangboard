@@ -24,7 +24,7 @@ namespace Timer.Services
         {
             return _recordBook.ContainsKey(exerciseId) ?
                 _recordBook[exerciseId]
-                    : new History(0,DateTime.MinValue,0,DateTime.MinValue);
+                    : new HistoryNeverCompleted();
         }
 
         public void Save(ExerciseScored e)

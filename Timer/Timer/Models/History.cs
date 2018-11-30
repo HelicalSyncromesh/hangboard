@@ -16,4 +16,11 @@ namespace Timer.Models
         public int Best { get; }
         public DateTime DateOfBest { get; }
     }
+
+    public class HistoryNeverCompleted : History
+    {
+        public HistoryNeverCompleted() : base(0, DateTime.MinValue, 0, DateTime.MinValue)
+        {
+        }
+    }
 }

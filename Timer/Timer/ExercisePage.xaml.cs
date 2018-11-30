@@ -33,16 +33,9 @@ namespace Timer
 	            Text = def.Hold
 	        };
 
-	        var exerciseStats = new Label
-	        {
-	            Text = TopScoreLabel(App.TopScores.Load(def.Id))
-	        };
-
-	        
-
-	        var grid = ResultsGrid(def);
-
-	        Title = "Exercise Page in C#";
+	        var exerciseStats = 
+            
+            Title = "Exercise Page in C#";
 
 	        Content = new StackLayout
 	        {
@@ -50,9 +43,9 @@ namespace Timer
 	            {
 	                exerciseTitle,
 	                exercisePosition,
-	                exerciseStats,
+	                new PreviousResults(App.TopScores.Load(def.Id)),
 	                Clock,
-	                grid}
+	                ResultsGrid(def)}
 	        };
 	    }
 
@@ -128,19 +121,7 @@ namespace Timer
 	        return s.ToString();
 	    }
 
-	    private string TopScoreLabel(History history)
-	    {
-	        return new StringBuilder()
-	            .Append("Last Score: ")
-	            .Append(history.Last)
-	            .Append(" | Best: ")
-	            .Append(history.Best)
-	            .Append(" | Date of Best: ")
-	            .Append(history.DateOfBest == DateTime.MinValue
-	                ? "N/A"
-	                : history.DateOfBest.ToShortDateString())
-	            .ToString();
-	    }
+
 	}
 
 

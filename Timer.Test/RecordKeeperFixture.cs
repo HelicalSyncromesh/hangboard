@@ -67,7 +67,7 @@ namespace Timer.Test.RecordKeeperFixture
         {
             var history = _sut.Load(3);
 
-            history.Should().BeEquivalentTo(new History(0, DateTime.MinValue, 0, DateTime.MinValue));
+            history.Should().BeEquivalentTo(new HistoryNeverCompleted());
                
         }
 
